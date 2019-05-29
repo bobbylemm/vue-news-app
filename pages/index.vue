@@ -1,0 +1,18 @@
+<template>
+  <div>
+    <h3>This is the home page</h3>
+    <Items></Items>
+  </div>
+</template>
+
+<script>
+import Items from "../components/Items.vue";
+export default {
+  components: {
+    Items
+  },
+  async fetch({ store }) {
+    await store.dispatch("LOAD_ITEMS", "topstories.json");
+  }
+};
+</script>
